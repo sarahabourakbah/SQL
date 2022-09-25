@@ -1,0 +1,24 @@
+---Created a grocery store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER);
+INSERT INTO store VALUES (1,"cake",4);
+INSERT INTO store VALUES (2,"apple",3);
+INSERT INTO store VALUES (3,"stone",7);
+INSERT INTO store VALUES (4,"coffee",10);
+INSERT INTO store VALUES (5,"banana",4);
+
+---Displayed the database by price
+
+SELECT *
+FROM store
+ORDER BY price;
+
+---What is the most expensive thing in the store?
+
+SELECT MAX(price)
+FROM store 
+
+---What is the cheapest thing in the store?
+
+SELECT MIN(price)
+FROM store
