@@ -1,0 +1,51 @@
+/* Create table about the people and what they do here */
+
+--Creating a table about famous singers first and last names --
+
+CREATE TABLE names (id integer PRIMARY KEY, name TEXT);
+
+INSERT INTO names VALUES (1, "Taylor Swift");
+INSERT INTO names VALUES (2, "Adam Levine");
+INSERT INTO names VALUES (3, "Conan Gray");
+INSERT INTO names VALUES (4,"Gwen Stefani");
+INSERT INTO names VALUES (5,"Doja Cat");
+INSERT INTO names VALUES (6, "Miley Cyrus");
+INSERT INTO names VALUES (7,"Post Malone");
+INSERT INTO names VALUES (8, "Ariana Grande");
+INSERT INTO names VALUES (9, "Lady Gaga");
+INSERT INTO names VALUES (10, "Selena Gomez");
+INSERT INTO names VALUES (11, "Justin Beiber");
+INSERT INTO names VALUES (12, "Dua Lipa");
+INSERT INTO names VALUES (13, "Jennifer Lopez");
+INSERT INTO names VALUES (14, "Snoop Dogg");
+INSERT INTO names VALUES (15, "Harry Styles");
+
+
+--Creating a table about the same famous people and their ages--
+
+CREATE TABLE ages (id integer PRIMARY KEY, singer_id integer, age integer);
+
+INSERT INTO ages VALUES (1, 1,32);
+INSERT INTO ages VALUES (2,2,43);
+INSERT INTO ages VALUES (3,3,23);
+INSERT INTO ages VALUES (4,4,52);
+INSERT INTO ages VALUES (5,5,26);
+INSERT INTO ages VALUES (6,6,29);
+INSERT INTO ages VALUES (7,7,27);
+INSERT INTO ages VALUES (8,8,29);
+INSERT INTO ages VALUeS (9,9,36);
+INSERT INTO ages VALUES (10,10,30);
+INSERT INTO ages VALUES (11,11,28);
+INSERT INTO ages VALUES (12,12,27);
+INSERT INTO ages VALUES (13,13,53);
+INSERT INTO ages VALUES (14,14,50);
+INSERT INTO ages VALUES (15,15,28);
+
+--Joining the two tables to display the singer name and their current age and then sorting the singers by age--
+
+SELECT name, age
+FROM names 
+JOIN ages
+ON names.id = ages.singer_id
+GROUP BY age 
+
